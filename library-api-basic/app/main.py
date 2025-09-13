@@ -5,7 +5,7 @@ from app.routers import authors, books, branches, library_system, loans, patrons
 
 API_PREFIX = "/api"  # Module-level variable for common API prefix
 
-app = FastAPI(title="Public Library API")
+app = FastAPI(title="Public Library API - Iteration 0")
 
 # Create all tables
 author.Base.metadata.create_all(bind=engine)  # Still works as Base is shared
