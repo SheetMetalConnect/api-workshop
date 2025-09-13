@@ -1,0 +1,46 @@
+# Python compiled files
+*.pyc
+__pycache__/
+*.pyo
+*.pyd
+
+# Virtual environment
+venv/
+.env/
+env/
+*.venv/
+
+# SQLite database
+*.db
+*.sqlite
+*.sqlite3
+
+# IDE and editor files
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
+
+# Logs
+*.log
+
+# Dependency directories
+pip-wheel-metadata/
+*.egg-info/
+dist/
+build/
+
+# Testing and coverage
+.coverage
+coverage.xml
+*.cover
+.pytest_cache/
+
+# macOS
+.DS_Store
+
+# Miscellaneous
+*.swp
+*.bak
+*.tmp
+*.drawio
