@@ -44,3 +44,5 @@ coverage.xml
 *.bak
 *.tmp
 *.drawio
+*.drawio.bkp
+*.drawio.dtmp
