@@ -46,3 +46,4 @@ coverage.xml
 *.drawio
 *.drawio.bkp
 *.drawio.dtmp
+~$*.pptx
