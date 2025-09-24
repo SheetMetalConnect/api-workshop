@@ -54,7 +54,7 @@ def update_book(db: Session, book_id: int, book: BookUpdate):
         if not db_book:
             return None
             
-        for key, value in book.dict(exclude_unset=True).items():
+        for key, value in book.model_dump(exclude_unset=True).items():
             setattr(db_book, key, value)
         
         db.commit()
