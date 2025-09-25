@@ -5,10 +5,10 @@ __pycache__/
 *.pyd
 
 # Virtual environment
-venv/
-.env/
-env/
-*.venv/
+**/venv/
+**/.env
+**/env/
+**/*.venv/
 
 # SQLite database
 *.db
