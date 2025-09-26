@@ -7,11 +7,12 @@ from app.crud.author import (
     partial_update_author, delete_author
 )
 from app.database import get_db
+from app.security import get_current_client, TokenPayload # Add this to protect desired endpoints
 
 router = APIRouter()
 
 @router.get("/", response_model=List[Author], status_code=status.HTTP_200_OK)
-def read_authors(skip: int = 0, limit: int = 100, db: Session = Depends(get_db)):
+def read_authors(skip: int = 0, limit: int = 100, db: Session = Depends(get_db), current_client: TokenPayload = Depends(get_current_client)):
     return get_authors(db, skip=skip, limit=limit)
 
 @router.get("/{author_id}", response_model=Author, status_code=status.HTTP_200_OK)
