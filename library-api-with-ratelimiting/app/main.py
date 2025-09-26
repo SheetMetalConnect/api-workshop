@@ -13,7 +13,7 @@ from app.routers import (
 
 API_PREFIX = "/api"  # Module-level variable for common API prefix
 
-app = FastAPI(title="Public Library API | OAuth 2.0 Security | Iteration 1")
+app = FastAPI(title="Public Library API | Rate Limiting Callers | Iteration 2")
 
 # Create all tables
 author.Base.metadata.create_all(bind=engine)  # Still works as Base is shared
