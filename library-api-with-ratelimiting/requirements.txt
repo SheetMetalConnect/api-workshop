@@ -7,3 +7,4 @@ python-jose[encryption]==3.3.0
 httpx==0.25.2
 python-dotenv==1.0.0
 async-lru==2.0.4
+slowapi

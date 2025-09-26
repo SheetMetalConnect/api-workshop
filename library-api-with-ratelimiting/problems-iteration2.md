@@ -8,4 +8,34 @@ This iteration expands on the issues addressed in [Iteration 1](../library-api-w
 
 **None**
 
+# Rate-Limiting for REST APIs
+It is a mechanism used to control the frequency of requests a client can make to a web server with a specific timeframe.  This helps ensure API stability, prevent abuse (like DDsS attacks), distribute resources fairly among clients of the API and manage infrastructure costs.  It is important to note that Rate Limiting differs from [API Throtling](https://www.merge.dev/blog/api-throttling-best-practices).  More details on [REST API Rate-Limiting, here](https://www.merge.dev/blog/rest-api-rate-limits).
 
+# Rate-Limiting in Python+FastAPI
+A simple, yet elegant, approach to use with FastAPI is a library called [slowapi](https://pypi.org/project/slowapi/).
+
+## Why `slowapi`?
+- **Simplicity**
+  - Minimal boilerplat. It installs and configures in minutes.
+- **Elegance**
+  - Applies limits declaratively on routes in your routers, keeeping concerns separated (no code changes to CRUD services, models or schemas)
+- **Flexibility**
+  - Use in-memory for quick setups or swithch to Redis if needed. It handles `async` / `await` correctly with FastAPI's concurrency model.
+- **Best Practice**
+  - At the time of this writing, it is widely recommended in the community for FastAPI projects, as it is purpose-built and avoids overkill for most use cases.
+  - If your app scales to multiple instances you can easily migrate `slowapi` to use Redis without rewriting code.
+
+## Alternatives?
+Alternatives to `slowapi` include:
+- fastapi-limiter
+- custom Redis implementations
+
+## Changes to the code
+
+### ./app/requirements.txt
+- add an entry for `slowapi` library
+
+### ./app/main.py
+- Configure the Limiter for the REST API to use, for example, clients IP address
+
+### ./app/routers/authors.py
