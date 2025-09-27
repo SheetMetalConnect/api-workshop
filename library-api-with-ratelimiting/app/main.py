@@ -27,7 +27,7 @@ app.add_exception_handler(RateLimitExceeded, _rate_limit_exceeded_handler)
 author.Base.metadata.create_all(bind=engine)  # Still works as Base is shared
 
 app.include_router(authors.create_authors_router(limiter), prefix=f"{API_PREFIX}/authors", tags=["authors"])
-app.include_router(books.router, prefix=f"{API_PREFIX}/books", tags=["books"])
+app.include_router(books.create_authors_router(limiter), prefix=f"{API_PREFIX}/books", tags=["books"])
 app.include_router(branches.router, prefix=f"{API_PREFIX}/branches", tags=["branches"])
 app.include_router(ls_router.router, prefix=f"{API_PREFIX}/library-system", tags=["library-system"])  # Updated
 app.include_router(loans.router, prefix=f"{API_PREFIX}/loans", tags=["loans"])
