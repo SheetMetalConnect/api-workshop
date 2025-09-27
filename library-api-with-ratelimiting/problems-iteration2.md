@@ -9,7 +9,7 @@ This iteration expands on the issues addressed in [Iteration 1](../library-api-w
 **None**
 
 # Rate-Limiting for REST APIs
-It is a mechanism used to control the frequency of requests a client can make to a web server with a specific timeframe.  This helps ensure API stability, prevent abuse (like DDsS attacks), distribute resources fairly among clients of the API and manage infrastructure costs.  It is important to note that Rate Limiting differs from [API Throtling](https://www.merge.dev/blog/api-throttling-best-practices).  More details on [REST API Rate-Limiting, here](https://www.merge.dev/blog/rest-api-rate-limits).
+It is a mechanism used to control, with a fixed value, the frequency of requests a client can make to a web server with a specific timeframe.  This helps ensure API stability, prevent abuse (like DDsS attacks), distribute resources fairly among clients of the API and manage infrastructure costs.  It is important to note that fixed-value `Rate Limiting` is considered an implementation of an [API Throtling](https://www.merge.dev/blog/api-throttling-best-practices) approach.  More details on [REST API Rate-Limiting, here](https://www.merge.dev/blog/rest-api-rate-limits).
 
 # Rate-Limiting in Python+FastAPI
 A simple, yet elegant, approach to use with FastAPI is a library called [slowapi](https://pypi.org/project/slowapi/).
