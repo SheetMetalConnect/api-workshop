@@ -1,4 +1,4 @@
-from sqlalchemy import Column, Integer, String, ForeignKey
+from sqlalchemy import Column, Integer, String, ForeignKey, Boolean
 from app.database import Base
 
 class Book(Base):
@@ -8,3 +8,4 @@ class Book(Base):
     title = Column(String, index=True)
     isbn = Column(String, unique=True)
     author_id = Column(Integer, ForeignKey("authors.id"))
+    is_sold_out = Column(Boolean, nullable=False, default=False)
